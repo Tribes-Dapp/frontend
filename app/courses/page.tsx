@@ -3,8 +3,9 @@ import asset3 from '@/assets/asset3.svg'
 import filterImage from '@/assets/filterImage.svg'
 import magnifier from '@/assets/magnifier.svg'
 import ProjectCard from '@/components/ProjectCard'
+import CourseCard from '@/components/CourseCard'
 
-export default function Launchpad() {
+export default function Courses() {
 
     return (
         <div className=''>
@@ -12,7 +13,7 @@ export default function Launchpad() {
                 <Image src={asset3} className='absolute left-0 -top-28 z-0' alt="logo" width={400} height={50} />
             </div>
             <div className="relative z-10 pt-32 px-28">
-                <h1 className="text-5xl font-medium">Creator's launchpad</h1>
+                <h1 className="text-5xl font-medium">Available courses</h1>
                 <p className="font-medium pt-8 text-xl w-[38%]">
                     Explore the open projects to receive found on different areas and
                     funding stage. Place a bid to support the project or just guarantee
@@ -32,13 +33,11 @@ export default function Launchpad() {
                 </div>
             </div>
             <div className='relative z-10 pt-12 px-28'>
-                <p className='text-4xl font-medium'>All launchpads</p>
-                <ProjectCard 
+                <p className='text-4xl font-medium'>All Courses</p>
+                <CourseCard 
                 description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
-                expected={2}
-                raised={2}
-                yield={2}
-                status='Open'
+                price={284}
+                type='Pre-sale'
                 />
             </div>
         </div>
