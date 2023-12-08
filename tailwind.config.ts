@@ -15,6 +15,7 @@ const config: Config = {
       'gelo' : '#f1f1f1',
       'softGreen' : '#dbe4d6',
       'softBlack':'#303030',
+      'gray' : '#E6E6E6'
     }
   },
   plugins: [],

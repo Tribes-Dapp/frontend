@@ -1,3 +1,4 @@
+'use client'
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
@@ -9,10 +10,6 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-export const metadata = {
-  title: "Tribes",
-  description: "Tribes",
-};
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "900"] });
 

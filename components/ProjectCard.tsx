@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           <Image src={rectangle} className=' rounded-2xl ml-28 my-16' alt="logo" width={400} height={400} />
           <div className='w-[50%] ml-24'>
             <p className='text-3xl font-medium my-6'>Description</p>
-            <p className='w-[100%] text-xl my-6'>{props.description}</p>
+            <p className='w-[90%] text-xl my-6'>{props.description}</p>
           </div>
 
         </div>
