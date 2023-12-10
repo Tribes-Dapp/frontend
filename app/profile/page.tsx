@@ -7,10 +7,14 @@ import BidCard from '@/components/BidCard'
 import TribesCard from '@/components/TribeCard'
 import Voucher from '@/components/Voucher'
 import NewTribesCard from '@/components/NewTribeCard'
+import { useWeb3ModalProvider, useWeb3ModalAccount } from '@web3modal/ethers5/react'
+import { ethers } from 'ethers'
+
 
 export default function Profile() {
 
     const [buttonClicked, setButtonClicked] = useState("my-bids")
+    const { address, chainId, isConnected } = useWeb3ModalAccount()
 
     return (
         <div className=''>
@@ -21,7 +25,7 @@ export default function Profile() {
                 <h1 className="text-5xl font-medium">Profile</h1>
                 <div className='flex items-baseline	gap-2 my-4'>
                     <Image src={walletIcon} className='' alt="logo" width={40}/>
-                    <p className='text-3xl font-medium'>0x000000000000000000000</p>
+                    <p className='text-3xl font-medium'>{address?.substring(0, 6) + "..." + address?.substring(37, 42)}</p>
                 </div>
             </div>
             <div className='flex'>
