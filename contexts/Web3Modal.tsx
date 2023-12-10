@@ -3,23 +3,14 @@
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
 
 const projectId = '385e63d0600cb1853dce878de2b590fa'
-const apiUrl = process.env.NEXT_PUBLIC_INFURA_API_KEY;
 
-// 2. Set chains
-const mainnet = [
+const chains = [
   {
     chainId: 80001,
     name: 'Mumbai',
     currency: 'MATIC',
     explorerUrl: 'https://mumbai.polygonscan.com',
-    rpcUrl: `https://mumbai.infura.io/v3/${apiUrl}`
-  },
-  {
-    chainId: 11155111,
-    name: 'Sepolia',
-    currency: 'ETH',
-    explorerUrl: 'https://sepolia.etherscan.io',
-    rpcUrl: `https://sepolia.infura.io/v3/${apiUrl}`
+    rpcUrl: 'https://rpc-mumbai.maticvigil.com'
   },
   {
     chainId: 1442,
@@ -30,7 +21,6 @@ const mainnet = [
   }
 ]
 
-// 3. Create modal
 const metadata = {
   name: 'Tribes',
   description: 'Decentralized Social Platform',
@@ -40,7 +30,7 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: mainnet,
+  chains: chains,
   projectId,
   themeMode: 'light',
   themeVariables: {
