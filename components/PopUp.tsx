@@ -1,6 +1,5 @@
-'use client'
+// Popup.js
 import { ReactNode, useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 interface PopupProps {
   isOpen: boolean;
@@ -30,10 +29,11 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-70 flex items-center justify-center">
+        <div className="fixed inset-0 z-30 flex items-center justify-center">
+          <div className="fixed inset-0 bg-black opacity-50 blur-sm z-50" />
           <div
             ref={popupRef}
-            className="bg-white p-12 rounded-2xl shadow-md"
+            className="bg-white p-12 rounded-2xl shadow-md relative z-50"
           >
             {children}
           </div>

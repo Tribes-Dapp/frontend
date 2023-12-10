@@ -50,13 +50,14 @@ export default function Profile() {
                     )}
                     {buttonClicked == "created-tribes" && (
                         <>
-                        < TribesCard />
+                        < TribesCard
+                        id="1"
+                        raised='10'
+                        status='Active'                       
+                        />
                         < NewTribesCard />
                         </>
-                    )}
-                    
-                    
-                    
+                    )}                 
                 </div>
             </div>
             <div className='w-[30%] min-h-[60vh] bg-gray rounded-l-3xl'>
