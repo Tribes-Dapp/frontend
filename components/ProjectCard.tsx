@@ -2,9 +2,11 @@ import Image from "next/image";
 import rectangle from '@/assets/rectangle.svg'
 import asset5 from '@/assets/asset5.svg'
 import arrow from '@/assets/arrow.svg'
-
+import Link from "next/link";
 
 type ProjectCardProps = {
+  id: string;
+  title: string;
   description: string;
   expected: any;
   raised: any;
@@ -22,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <div className='flex items-center absolute z-20'>
           <Image src={rectangle} className=' rounded-2xl ml-28 my-16' alt="logo" width={400} height={400} />
           <div className='w-[50%] ml-24'>
-            <p className='text-3xl font-medium my-6'>Description</p>
+            <p className='text-2xl font-medium my-6'>{props.title}</p>
             <p className='w-[90%] text-xl my-6'>{props.description}</p>
           </div>
 
@@ -53,9 +55,9 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           </div>
         </div>
         <div className='flex justify-center items-center pt-6'>
-          <button className='bg-softBlack text-white font-medium text-lg py-3 px-4 rounded-xl hover:scale-[97%] duration-300 ease-in-out'>
+        <Link href={`/launchpad/${props.id}`} className='bg-softBlack text-white font-medium text-lg py-3 px-4 rounded-xl hover:scale-[97%] duration-300 ease-in-out' >
             <Image src={arrow} alt="arrow" width={20} />
-          </button>
+        </Link>
         </div>
       </div>
     </div>

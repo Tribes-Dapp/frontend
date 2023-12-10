@@ -18,13 +18,13 @@ const NavBar: React.FC = () => {
         </Link>
       </div>
       <div className="flex justify-between w-1/4">
-        <Link href='/launchpad' className={`hover:scale-95 duration-300 ease-in-out text-xl ${path == '/launchpad' ? "bg-purple px-3 rounded-lg" : ""}`}>
+        <Link href='/launchpad' className={`duration-300 ease-in-out text-xl  px-3 ${path == '/launchpad' ? "bg-purple rounded-lg" : ""}`}>
             Launchpad
         </Link>
-        <Link href='/courses' className={`hover:scale-95 duration-300 ease-in-out text-xl ${path == '/courses' ? "bg-purple px-3 rounded-lg" : ""}`}>
+        <Link href='/courses' className={`duration-300 ease-in-out text-xl  px-3 ${path == '/courses' ? "bg-purple rounded-lg" : ""}`}>
             Courses
         </Link>
-        <Link href='/profile' className={`hover:scale-95 duration-300 ease-in-out text-xl ${path == '/profile' ? "bg-purple px-3 rounded-lg" : ""}`}>
+        <Link href='/profile' className={`duration-300 ease-in-out text-xl px-3  ${path == '/profile' ? "bg-purple rounded-lg" : ""}`}>
             Profile
         </Link>
       </div>

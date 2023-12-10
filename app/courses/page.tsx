@@ -32,7 +32,7 @@ export default function Courses() {
                     </div>
                 </div>
             </div>
-            <div className='relative z-10 pt-12 px-28'>
+            <div className='relative z-0 pt-12 px-28'>
                 <p className='text-4xl font-medium'>All Courses</p>
                 <CourseCard 
                 description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
