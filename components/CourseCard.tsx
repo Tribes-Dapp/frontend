@@ -19,7 +19,6 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
-  const openPopup = () => setPopupOpen(true);
   const closePopup = () => setPopupOpen(false);
 
   const handleIncrement = () => {
@@ -34,24 +33,24 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
 
   const { title, description, price, type, setTitle, setDescription, setPrice, setType } = useCourseContext();
 
-  useEffect(() => {
+  const handlePopUp = () => {
+    setPopupOpen(true);
     setTitle(props.title);
     setDescription(props.description);
     setPrice(props.price);
     setType(props.type);
-
   }
-    , [title, description]);
+  
 
   return (
     <div className="flex gap-12 mt-16">
-      <div className="h-96 w-3/4 rounded-3xl border border-[3px] shadow-xl relative overflow-clip">
-        <Image className="absolute -left-40 -top-56" src={asset5} alt="logo" width={750} height={50} />
+      <div className="h-96 w-3/4 rounded-3xl border border-[3px] shadow-xl relative overflow-hidden">
+      <Image className='absolute -left-40 -top-56 overflow-hidden' src={asset5} alt="logo" width={750} height={50} />
         <div className="backdrop-blur-sm bg-white/20  w-1/5  h-full rounded-l-3xl absolute z-10"></div>
-        <div className="flex items-center absolute z-20">
-          <Image src={rectangle} className="rounded-2xl ml-28 my-16" alt="logo" width={400} height={400} />
+        <div className="flex items-center h-full relative z-20 overflow-hidden">
+            <Image src={rectangle} className="rounded-2xl ml-28" alt="logo" width={400} height={400} />
           <div className="w-[50%] ml-24">
-            <p className="text-3xl font-medium my-6">{props.title}</p>
+            <p className="text-3xl font-medium my-6 w-[90%]">{props.title}</p>
             <p className="w-[90%] text-xl my-6">{props.description}</p>
           </div>
         </div>
@@ -69,7 +68,7 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
           </div>
         </div>
         <div className="flex justify-center items-center pt-2">
-          <button className="bg-softBlack text-white font-medium text-lg py-3 px-4 rounded-xl" onClick={openPopup}>
+          <button className="bg-softBlack text-white font-medium text-lg py-3 px-4 rounded-xl" onClick={handlePopUp}>
             <Image src={arrow} alt="arrow" width={20} />
           </button>
           <Popup isOpen={isPopupOpen} onClose={closePopup}>
