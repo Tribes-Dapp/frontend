@@ -64,10 +64,10 @@ export default function Courses() {
     };
 
     const filteredCourses = courseData.courses.filter((course) =>
-    (!filtersApplied ||
+    (
       (course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         course.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
-      (course.type == type)
+        (!filtersApplied || course.type == type) 
     )
   );
 
@@ -108,7 +108,7 @@ export default function Courses() {
                     </div>
                 </div>
             </div>
-            <div className='relative z-0 pt-12 px-28'>
+            <div className='relative z-0 px-28 my-12'>
                 <p className='text-4xl font-medium'>All Courses</p>
                 <CourseProvider>
                     {filteredCourses.map((filteredCourse) => (
@@ -125,7 +125,7 @@ export default function Courses() {
             </div>
 
             <Popup isOpen={isPopupOpen} onClose={closePopup}>
-                <div className='w-[30vh]'>
+                <div className='w-[50vh]'>
                     <div className="flex justify-between">
                         <h1 className="text-2xl font-medium">Filter</h1>
                         <button
@@ -144,7 +144,7 @@ export default function Courses() {
                         <select
                             value={type}
                             onChange={(e) => setType(e.target.value)}
-                            className='w-[40%] rounded-xl w-full h-8 px-4 focus:outline-none text-sm border'
+                            className='w-[40%] rounded-xl w-full px-4 h-12 focus:outline-none text-sm border border-[3px] text-xl cursor-pointer'
                         >
                             <option value="">Select Type</option>
                             <option value="Sale">Sale</option>
@@ -153,7 +153,7 @@ export default function Courses() {
                     </div>
                     <button
                         onClick={handleFilterSave}
-                        className="w-full h-10 bg-black text-white mt-4 rounded-xl "
+                        className="w-full h-12 bg-black text-white mt-4 rounded-xl text-xl"
                     >
                         Apply filter
                     </button>

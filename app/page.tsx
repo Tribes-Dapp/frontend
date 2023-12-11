@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <p className='text-2xl mt-24 font-medium text-softBlack'>The web3 creator´s economy enabler: building true communities</p>
             <div className='mt-20'>
-              <Button text="Clique aqui" />
+              <Button text="Learn More" />
             </div>
           </div>
         </div>
@@ -29,15 +29,19 @@ export default function Home() {
           <p className='text-5xl font-medium mt-24 text-softBlack'>The creator´s current economic model is broken</p>
         </div>
       </div>
-      <div className='mt-8 my-8'>
+      <div className='mt-8 my-16'>
         <div className='flex mx-40 gap-12'>
           <div className='bg-purple h-96 w-1/4 rounded-3xl border border-[3px] shadow-xl'> </div>
           <div className='bg-softGreen h-96 w-3/4 rounded-3xl border border-[3px] shadow-xl'> </div>
         </div>
-        <div className='flex mx-40 gap-12 mt-16'>
+        <div className='flex mx-40 gap-12 mt-12'>
           <div className='bg-softGreen h-96 w-3/4  rounded-3xl border border-[3px] shadow-xl'> </div>
           <div className='bg-purple h-96 w-1/4 rounded-3xl border border-[3px] shadow-xl'> </div>
         </div>
+        <div className='flex absolute botton-0 mx-40 gap-12 mt-12'>
+          <div className='bg-white h-96 w-[170vh] rounded-t-3xl border border-t-[3px] border-x-[3px] shadow-xl'></div>
+        </div>
+
       </div>
 
 

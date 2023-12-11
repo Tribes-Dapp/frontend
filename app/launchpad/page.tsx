@@ -59,11 +59,12 @@ export default function Launchpad() {
     };
 
     const filteredCourses = courseData.courses.filter((course) =>
-    (!filtersApplied ||
+    (
         (course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             course.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (!minYield || parseInt(course.yield) >= parseInt(minYield)) &&
-        (!maxYield || parseInt(course.yield) <= parseInt(maxYield))
+        (!filtersApplied || ((!minYield || parseInt(course.yield) >= parseInt(minYield)) &&
+            (!maxYield || parseInt(course.yield) <= parseInt(maxYield))))
+
     )
     );
 
@@ -91,7 +92,7 @@ export default function Launchpad() {
             <div className="relative z-10 pt-12 px-28">
                 <div className='flex gap-4'>
                     <button onClick={handleFilterButtonClick} className={`flex gap-2 items-center border-2 px-4 py-1 rounded-lg ${filtersApplied ? 'bg-black text-white' : ''}`}>
-                        {filtersApplied ? (<Image src={closeIconWhite} className='text-white' alt="logo" width={10} height={10} />) : (<Image src={filterImage} className='text-white	' alt="logo" width={17} height={15} />)
+                        {filtersApplied ? (<Image src={closeIconWhite} className='text-white' alt="logo" width={10} height={15} />) : (<Image src={filterImage} className='text-white	' alt="logo" width={17} height={15} />)
                         }
                         <p className='text-xl font-medium relative z-30'>Filter</p>
                     </button>
@@ -121,20 +122,20 @@ export default function Launchpad() {
             </div>
 
             <Popup isOpen={isPopupOpen} onClose={closePopup}>
-                <div className= 'w-[30vh]'>
+                <div className='w-[50vh]'>
                     <div className="flex justify-between">
-                            <h1 className="text-2xl font-medium">Filter</h1>
-                            <button
-                                onClick={closePopup}
-                            >
-                                <Image
-                                    alt="close"
-                                    draggable={false}
-                                    src={closeIcon}
-                                    width={15}
-                                    height={15}
-                                />
-                            </button>
+                        <h1 className="text-3xl font-medium">Filter</h1>
+                        <button
+                            onClick={closePopup}
+                        >
+                            <Image
+                                alt="close"
+                                draggable={false}
+                                src={closeIcon}
+                                width={15}
+                                height={15}
+                            />
+                        </button>
                     </div>
                     <div className='flex justify-center gap-6 my-6'>
                         <input
@@ -142,19 +143,19 @@ export default function Launchpad() {
                             value={minYield}
                             onChange={(e) => setMinYield(e.target.value)}
                             placeholder="Min Yield"
-                            className='w-[40%] rounded-xl w-full h-8 px-4 focus:outline-none text-sm border'
+                            className='w-[40%] border border-[3px] text-xl rounded-xl w-full h-12 px-4 focus:outline-none  border'
                         />
                         <input
                             type="number"
                             value={maxYield}
                             onChange={(e) => setMaxYield(e.target.value)}
                             placeholder="Max Yield"
-                            className='w-[40%] rounded-xl w-full h-8 px-4 focus:outline-none text-sm border'
+                            className='w-[40%] border border-[3px] text-xl rounded-xl w-full h-12 px-4 focus:outline-none border'
                         />
                     </div>
                     <button
                         onClick={handleFilterSave}
-                        className="w-full h-10 bg-black text-whiteBackground mt-4 rounded-xl "
+                        className="w-full h-12 bg-black text-xl text-whiteBackground mt-4 rounded-xl font-medium"
                     >
                         Apply filter
                     </button>
