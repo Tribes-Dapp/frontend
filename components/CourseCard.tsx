@@ -49,7 +49,7 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
       <Image className='absolute -left-0  overflow-hidden -z-50' src={asset8} alt="logo" width={240} height={100} />
         <div className="backdrop-blur-sm bg-white/20  w-1/5  h-full rounded-l-3xl absolute z-10"></div>
         <div className="flex items-center h-full relative z-20 overflow-hidden">
-            <Image src={rectangle} className="rounded-2xl ml-28" alt="logo" width={400} height={400} />
+            <img src="https://ipfs.io/ipfs/QmWjiCFYrx1yqsshFzi1eXHfEuVA39zL1gPTuvr13zk5RQ" alt="Minha Figura" /> 
           <div className="w-[50%] ml-24">
             <p className="text-3xl font-medium my-6 w-[90%]">{props.title}</p>
             <p className="w-[90%] text-xl my-6">{props.description}</p>

@@ -3,8 +3,8 @@ import Image from "next/image";
 import plusIcon from '@/assets/plusIcon.svg'
 import Popup from '@/components/PopUp';
 import closeIcon from '@/assets/closeIcon.svg'
-import { useState } from "react";
-
+import { useState, ChangeEvent } from "react";
+import axios from 'axios';
 
 const NewTribesCard: React.FC = () => {
 
@@ -22,12 +22,47 @@ const NewTribesCard: React.FC = () => {
     const [sale_start_time, setSaleStartTime] = useState("");
     const [sale_end_time, setSaleEndTime] = useState("");
     const [sale_price, setSalePrice] = useState("");
-    const [cid, setCid] = useState("");
+    const [fileImg, setFileImg] = useState<File | null>(null);
+    const [urlIPFS, setUrlIPFS] = useState("");
 
     const [isPopupOpen, setPopupOpen] = useState(false);
 
     const openPopup = () => setPopupOpen(true);
     const closePopup = () => setPopupOpen(false);
+
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setFileImg(e.target.files?.[0] || null);
+      };
+
+
+    const sendFileToIPFS = async () => {
+        if (fileImg) {
+          try {
+            const formData = new FormData();
+            formData.append('file', fileImg);
+            console.log(process.env.PINATA_API_KEY)
+      
+            const resFile = await axios.post('https://api.pinata.cloud/pinning/pinFileToIPFS', formData, {
+              headers: {
+                'pinata_api_key':  process.env.PINATA_API_KEY,
+                'pinata_secret_api_key': process.env.PINATA_SECRET_API_KEY,
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+      
+            const ImgHash = `https://ipfs.io/ipfs/${resFile.data.IpfsHash}`;
+            console.log(ImgHash)
+            setUrlIPFS(ImgHash);
+
+            return "Ok";
+
+          } catch (error) {
+            console.log('Error sending File to IPFS: ');
+            console.log(error);
+          }
+        }
+      };
+ 
 
     return (
         <div className='w-[90%] border-[3px] rounded-3xl flex flex-col relative'>
@@ -148,13 +183,15 @@ const NewTribesCard: React.FC = () => {
                         />
                         <h1 className="pt-2 font-medium">CID</h1>
                         <input
-                            value={cid}
-                            onChange={(e) => setCid(e.target.value)}
-                            className="rounded-xl w-full h-8 px-4 focus:outline-none text-sm border"
+                            type='file'
+                            onChange={handleFileChange}
+                            className="relative m-0 block w-full min-w-0 flex-auto rounded-xl border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
                         />
+                        
                     </div>
                 </div>
                 <button
+                    onClick={sendFileToIPFS}
                     className="w-full h-10 bg-black text-whiteBackground mt-4 rounded-xl "
                 >
                     Create
