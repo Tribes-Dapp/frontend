@@ -50,8 +50,6 @@ export default function Courses() {
     const [searchTerm, setSearchTerm] = useState('');
     const [type, setType] = useState('');
     const [filtersApplied, setFiltersApplied] = useState(false);
-    console.log(filtersApplied);
-
 
     const handleFilterButtonClick = () => {
         if (filtersApplied && type) {

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import asset1 from '@/assets/asset1.svg'
 import asset2 from '@/assets/asset2.svg'
 import Button from '@/components/Button'
-
+import Head from 'next/head';
 
 export default function Home() {
 

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import rectangle from '@/assets/rectangle.svg';
 import asset5 from '@/assets/asset5.svg';
+import asset8 from '@/assets/asset8.svg';
 import arrow from '@/assets/arrow.svg';
 import Popup from '@/components/PopUp';
 import closeIcon from '@/assets/closeIcon.svg';
@@ -45,7 +46,7 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
   return (
     <div className="flex gap-12 mt-16">
       <div className="h-96 w-3/4 rounded-3xl border border-[3px] shadow-xl relative overflow-hidden">
-      <Image className='absolute -left-40 -top-56 overflow-hidden' src={asset5} alt="logo" width={750} height={50} />
+      <Image className='absolute -left-0  overflow-hidden -z-50' src={asset8} alt="logo" width={240} height={100} />
         <div className="backdrop-blur-sm bg-white/20  w-1/5  h-full rounded-l-3xl absolute z-10"></div>
         <div className="flex items-center h-full relative z-20 overflow-hidden">
             <Image src={rectangle} className="rounded-2xl ml-28" alt="logo" width={400} height={400} />

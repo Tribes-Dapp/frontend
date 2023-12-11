@@ -11,7 +11,7 @@ const NavBar: React.FC = () => {
   const path = usePathname();
 
   return (
-    <div className="flex justify-between font-semibold text-grey items-center mt-16 mx-16 relative z-10">
+    <div className="flex justify-between font-semibold text-grey items-center mt-16 mx-16 relative z-0">
       <div>
         <Link href='/' className="hover:scale-95 duration-300 ease-in-out">
             <Image alt="logo" draggable={false} src={logo} width={130}/>
