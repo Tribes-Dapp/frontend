@@ -44,7 +44,7 @@ const ProjectDetailPage = ({ params: { slug } }: { params: { slug: string } }) =
   return (
     <div className=''>
             <div className='relative'>
-                <Image src={asset3} className='absolute left-0 -top-28 z-0' alt="logo" width={400} height={50} />
+              <Image src={asset3} className='absolute left-0 -top-28 -z-10' alt="logo" width={400} height={50} />
             </div>
             <div className="relative z-10 pt-32 px-28 flex justify-between">
                 < ProjectData
