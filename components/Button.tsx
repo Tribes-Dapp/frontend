@@ -5,7 +5,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <button className='bg-softBlack text-white font-medium text-lg py-2 px-20 rounded-xl hover:scale-[97%] duration-300 ease-in-out'>{props.text}</button>   
+    <button className='bg-softBlack text-white font-medium text-lg py-2 px-20 rounded-xl'>{props.text}</button>   
   );
 }
 
