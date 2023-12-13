@@ -14,6 +14,7 @@ const courseData = {
         {
             "title": "Curso de Desenvolvimento Python para DApps",
             "id": "1",
+            "image": "https://ipfs.io/ipfs/QmYxmjjJUUzbWBxdDAGYoNSsioDfWpw1XE37RZGygkrbUT",
             "yield": "10",
             "bid_amount": "0.1",
             "minimum_required": "2",
@@ -25,6 +26,7 @@ const courseData = {
         {
             "title": "Curso Avançado de Machine Learning",
             "id": "2",
+            "image": "https://ipfs.io/ipfs/QmPsiKetVi4Pn45F19uEGo1B8hM3VNGGfuwEuBvvW6mG1H",
             "yield": "9",
             "bid_amount": "0.2",
             "minimum_required": "3",
@@ -110,6 +112,7 @@ export default function Launchpad() {
                 {filteredCourses.map((course) => (
                     <ProjectCard
                         key={course.id}
+                        image={course.image}
                         id={course.id}
                         title={course.title}
                         description={course.description}

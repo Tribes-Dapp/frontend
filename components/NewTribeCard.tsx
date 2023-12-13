@@ -6,6 +6,7 @@ import closeIcon from '@/assets/closeIcon.svg'
 import { useState, ChangeEvent } from "react";
 import axios from 'axios';
 
+
 const NewTribesCard: React.FC = () => {
 
     const [name, setName] = useState("");
@@ -40,12 +41,11 @@ const NewTribesCard: React.FC = () => {
           try {
             const formData = new FormData();
             formData.append('file', fileImg);
-            console.log(process.env.PINATA_API_KEY)
       
             const resFile = await axios.post('https://api.pinata.cloud/pinning/pinFileToIPFS', formData, {
               headers: {
-                'pinata_api_key':  process.env.PINATA_API_KEY,
-                'pinata_secret_api_key': process.env.PINATA_SECRET_API_KEY,
+                'pinata_api_key':  process.env.NEXT_PUBLIC_PINATA_API_KEY,
+                'pinata_secret_api_key': process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY,
                 'Content-Type': 'multipart/form-data',
               },
             });

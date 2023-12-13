@@ -14,6 +14,7 @@ type CourseCardProps = {
   description: string;
   price: number;
   type: any;
+  image: string;
 };
 
 const CourseCard: React.FC<CourseCardProps> = (props) => {
@@ -46,14 +47,17 @@ const CourseCard: React.FC<CourseCardProps> = (props) => {
   return (
     <div className="flex gap-12 mt-16">
       <div className="h-96 w-3/4 rounded-3xl border border-[3px] shadow-xl relative overflow-hidden">
-      <Image className='absolute -left-0  overflow-hidden -z-50' src={asset8} alt="logo" width={240} height={100} />
-        <div className="backdrop-blur-sm bg-white/20  w-1/5  h-full rounded-l-3xl absolute z-10"></div>
-        <div className="flex items-center h-full relative z-20 overflow-hidden">
-            <img src="https://ipfs.io/ipfs/QmWjiCFYrx1yqsshFzi1eXHfEuVA39zL1gPTuvr13zk5RQ" alt="Minha Figura" /> 
-          <div className="w-[50%] ml-24">
-            <p className="text-3xl font-medium my-6 w-[90%]">{props.title}</p>
-            <p className="w-[90%] text-xl my-6">{props.description}</p>
-          </div>
+      <Image className='absolute -left-0  overflow-hidden -z-50' src={asset8} alt="logo" width={250} height={100} />
+        <div className="backdrop-blur-sm bg-white/20  w-[25%]  h-full rounded-l-3xl absolute z-10"></div>
+        <div className="flex items-center justify-between h-full relative z-20 overflow-hidden">
+            <div></div>
+            <div className='rounded-2xl overflow-hidden'>
+              <img src={props.image} alt="Minha Figura" width={380} /> 
+            </div>
+            <div className="w-[50%] pl-24">
+              <p className="text-3xl font-medium my-6 w-[90%]">{props.title}</p>
+              <p className="w-[90%] text-lg my-6">{props.description}</p>
+            </div>
         </div>
       </div>
       <div className="bg-softGreen h-96 w-1/4 rounded-3xl border border-[3px] shadow-xl flex justify-center flex-col items-center">

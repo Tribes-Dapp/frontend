@@ -15,6 +15,7 @@ const courseData = {
         {
             "title": "Curso de Desenvolvimento Python para DApps",
             "id": "1",
+            "image": "https://ipfs.io/ipfs/QmYxmjjJUUzbWBxdDAGYoNSsioDfWpw1XE37RZGygkrbUT",
             "price": 10,
             "type": "Sale",
             "rate": "10",
@@ -28,6 +29,7 @@ const courseData = {
         {
             "title": "Curso Avançado de Machine Learning",
             "id": "2",
+            "image": "https://ipfs.io/ipfs/QmPsiKetVi4Pn45F19uEGo1B8hM3VNGGfuwEuBvvW6mG1H",
             "rate": "9",
             "price": 10,
             "type": "Pre-sale",
@@ -112,6 +114,7 @@ export default function Courses() {
                     {filteredCourses.map((filteredCourse) => (
                         <CourseCard
                             key={filteredCourse.id}
+                            image={filteredCourse.image}
                             title={filteredCourse.title}
                             description={filteredCourse.description}
                             price={filteredCourse.price}
