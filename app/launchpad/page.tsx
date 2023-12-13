@@ -107,7 +107,7 @@ export default function Launchpad() {
                     </div>
                 </div>
             </div>
-            <div className='relative z-0 pt-12 px-28'>
+            <div className='relative z-0 py-12 px-28'>
                 <p className='text-4xl font-medium'>All launchpads</p>
                 {filteredCourses.map((course) => (
                     <ProjectCard
@@ -146,14 +146,14 @@ export default function Launchpad() {
                             value={minYield}
                             onChange={(e) => setMinYield(e.target.value)}
                             placeholder="Min Yield"
-                            className='w-[40%] border border-[3px] text-xl rounded-xl w-full h-12 px-4 focus:outline-none  border'
+                            className='w-[40%] border-[3px] text-xl rounded-xl h-12 px-4 focus:outline-none '
                         />
                         <input
                             type="number"
                             value={maxYield}
                             onChange={(e) => setMaxYield(e.target.value)}
                             placeholder="Max Yield"
-                            className='w-[40%] border border-[3px] text-xl rounded-xl w-full h-12 px-4 focus:outline-none border'
+                            className='w-[40%] border-[3px] text-xl rounded-xl h-12 px-4 focus:outline-none '
                         />
                     </div>
                     <button

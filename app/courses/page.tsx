@@ -145,7 +145,7 @@ export default function Courses() {
                         <select
                             value={type}
                             onChange={(e) => setType(e.target.value)}
-                            className='w-[40%] rounded-xl w-full px-4 h-12 focus:outline-none text-sm border border-[3px] text-xl cursor-pointer'
+                            className='w-[40%] rounded-xl px-4 h-12 focus:outline-none border-[3px] text-xl cursor-pointer'
                         >
                             <option value="">Select Type</option>
                             <option value="Sale">Sale</option>
