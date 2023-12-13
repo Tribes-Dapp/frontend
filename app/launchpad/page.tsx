@@ -84,7 +84,7 @@ export default function Launchpad() {
                 <Image src={asset3} className='absolute left-0 -top-28 -z-10' alt="logo" width={400} height={50} />
             </div>
             <div className="relative z-10 pt-32 px-28">
-                <h1 className="text-5xl font-medium">Creator's launchpad</h1>
+                <h1 className="text-5xl font-medium">Creator&apos;s launchpad</h1>
                 <p className="font-medium pt-8 text-xl w-[38%]">
                     Explore the open projects to receive found on different areas and
                     funding stage. Place a bid to support the project or just guarantee
